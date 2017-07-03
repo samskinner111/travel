@@ -1,0 +1,27 @@
+<h1>Passing data from controller to view</h1>
+
+
+<h3>This is my home country: <%= @homeland %></h3>
+
+<h3>Countries I'd like to visit:</h3>
+
+<ul>
+  <% @countries.each do |country| %>
+    <li><%= country %></li>
+  <% end %>
+</ul>
+
+<h3>An image of Chile:</h3>
+<%= image_tag('chile-mountains.jpg', alt: "chilean alps",
+                                     width: 400) %>
+<br>
+<hr>
+<br>
+
+<h3>A set of images from places I'd like to visit:</h3>
+
+    <% @country_pics.each do |pic| %>
+    <p><%= image_tag pic, width: 400, style: 'border-bottom: 25px' %></p>
+  <% end %>
+
+<br>
