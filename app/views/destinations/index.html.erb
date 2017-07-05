@@ -1,4 +1,9 @@
-<p id="notice"><%= notice %></p>
+<% if notice != nil %>
+  <p id="notice" class="alert alert-success" role="alert">
+    <%= notice %>
+  </p>
+<% end %>
+
 <h1>My Destination Wish List</h1>
 
 <%= link_to 'New Destination', new_destination_path, class: "btn btn-primary" %>
