@@ -15,7 +15,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {
+.navbar-default .navbar-brand  {
   font-family: 'Marck Script', cursive;
   color: #000;
+}
+
+.container {
+  background: rgba(211,211,211,0.8);
+}
+
+body {
+  background: url(<%= asset_path "bg.jpg" %>) no-repeat;
+  background-size: cover;
 }
