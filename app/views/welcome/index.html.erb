@@ -1,5 +1,8 @@
+<h4><%= link_to 'Link to Params', param_path, class: 'navbar-brand' %></h4>
+<br>
+<br>
+<hr>
 <h1>Passing data from controller to view</h1>
-
 
 <h3>This is my home country: <%= @homeland %></h3>
 
@@ -24,11 +27,5 @@
   <% @country_pics.each do |pic| %>
     <p><%= image_tag pic, width: 400, style: 'border-bottom: 25px', class: "img-responsive" %></p>
   <% end %>
-
-<br>
-
-<h4><%= link_to 'Params', param_path, class: 'navbar-brand' %></h4>  
-
 <br>
 <br>
-
