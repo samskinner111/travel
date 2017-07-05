@@ -1,3 +1,30 @@
+<style>
+  body {
+    background: <%= @color %>;
+  }
+</style>
+
+
 <h1>Passing params from view to controller</h1>
 
 <h3>My favorite color is <%= @color %>!</h3>
+<br>
+<%if @size.to_i >= 12 %>
+  <h3>I have HUGE feet!</h3>
+<% else %>
+  <h3>My shoe size is <%= @size %>!</h3>
+<% end %>
+<br>
+<%= link_to "Blue", param_path(color: 'blue'), class: "btn btn-primary" %>
+<%= link_to "Red", param_path(color: 'red'), class: "btn btn-danger" %>
+<hr>
+<h4><%= link_to 'Index', index_path, class: 'navbar-brand' %></h4>
+
+<br>
+<br>
+
+
+
+
+
+

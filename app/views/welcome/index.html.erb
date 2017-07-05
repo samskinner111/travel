@@ -13,15 +13,22 @@
 
 <h3>An image of Chile:</h3>
 <%= image_tag('chile-mountains.jpg', alt: "chilean alps",
-                                     width: 400) %>
+                                     width: 800,
+                                     class: "img-responsive") %>
 <br>
 <hr>
 <br>
 
 <h3>A set of images from places I'd like to visit:</h3>
 
-    <% @country_pics.each do |pic| %>
-    <p><%= image_tag pic, width: 400, style: 'border-bottom: 25px' %></p>
+  <% @country_pics.each do |pic| %>
+    <p><%= image_tag pic, width: 400, style: 'border-bottom: 25px', class: "img-responsive" %></p>
   <% end %>
 
 <br>
+
+<h4><%= link_to 'Params', param_path, class: 'navbar-brand' %></h4>  
+
+<br>
+<br>
+
