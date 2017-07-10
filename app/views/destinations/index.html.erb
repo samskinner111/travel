@@ -3,17 +3,22 @@
     <%= notice %>
   </p>
 <% end %>
+
 <h3>
-<ul class="nav nav-pills" role="tablist">
-  <li><%= link_to "All", destinations_path %></li>
-  <% @my_countries.each do |c| %>
-    <li><%= link_to "#{c.country}", controller: "destinations", country: "#{c.country}" %></li>
-  <% end %>
-</ul>
+  <ul class="nav nav-pills"  role="tablist">
+    <li><%= link_to "All", destinations_path %></li>
+    <% @my_countries.each do |c| %>
+      <li><%= link_to "#{c.country}", controller: "destinations", country: "#{c.country}" %></li>
+    <% end %>
+  </ul>
 </h3>
 
-<h1>Destinations</h1>
+<h1>My Destination Wish List</h1>
 
+<%= link_to 'New Destination', new_destination_path, class: "btn btn-primary" %>
+
+<br>
+<br>
   <div class="row">
     <% @destinations.each do |destination| %>
       <div class="col-md-4">
@@ -33,7 +38,3 @@
     </div>
   <% end %>
 </div>
-
-<br>
-
-<%= link_to 'New Destination', new_destination_path, class: "btn btn-primary" %>

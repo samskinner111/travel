@@ -1,8 +1,6 @@
 class DestinationsController < ApplicationController
   before_action :set_destination, only: [:show, :edit, :update, :destroy]
 
-  # GET /destinations
-  # GET /destinations.json
   def index
     if params[:country] == nil
       @destinations = Destination.all
@@ -12,22 +10,16 @@ class DestinationsController < ApplicationController
     @my_countries = Destination.select(:country).order(:country).distinct
   end
 
-  # GET /destinations/1
-  # GET /destinations/1.json
   def show
   end
 
-  # GET /destinations/new
   def new
     @destination = Destination.new
   end
 
-  # GET /destinations/1/edit
   def edit
   end
 
-  # POST /destinations
-  # POST /destinations.json
   def create
     @destination = Destination.new(destination_params)
 
@@ -42,8 +34,6 @@ class DestinationsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /destinations/1
-  # PATCH/PUT /destinations/1.json
   def update
     respond_to do |format|
       if @destination.update(destination_params)
@@ -56,8 +46,6 @@ class DestinationsController < ApplicationController
     end
   end
 
-  # DELETE /destinations/1
-  # DELETE /destinations/1.json
   def destroy
     @destination.destroy
     respond_to do |format|
@@ -67,7 +55,7 @@ class DestinationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_destination
       @destination = Destination.find(params[:id])
     end
