@@ -26,6 +26,9 @@
         <div class="panel-body">
          <h2><%= destination.city %></h2>
          <h3><%= destination.country %></h3>
+         <% if destination.avatar_file_name != nil %>
+           <p><%= image_tag destination.avatar.url(:medium), class: "img-responsive" %></p>
+         <% end %>
          <p>Population: <%= destination.population %></p>
          <p><%= destination.description %></p>
        

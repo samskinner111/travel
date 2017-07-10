@@ -30,7 +30,12 @@
     <%= form.label :description %>
     <%= form.text_area :description, id: :destination_description, class: "form-control", rows: "5" %>
   </div>
-
+  <br>
+  <div class="field form-group">
+    <%= form.label "Upload an Image" %><br>
+    <%= form.file_field :avatar %>
+  </div>
+  <br>
   <div class="actions form-group">
     <%= form.submit class: "btn btn-primary" %>
   </div>

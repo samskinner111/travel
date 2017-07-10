@@ -1,9 +1,11 @@
 <% if notice != nil %>
-  <p id="notice" class="alert alert-danger" role="alert">
+  <p id="notice" class="alert alert-success" role="alert">
     <%= notice %>
   </p>
 <% end %>
-
+<% if @destination.avatar_file_name != nil %>
+  <%= image_tag @destination.avatar.url %>
+<% end %>  
 <h1><%= @destination.city %>, <%= @destination.country %></h1>
 <h2>Population: <%= @destination.population %></h2>
 <p> <%= @destination.description %></p>
