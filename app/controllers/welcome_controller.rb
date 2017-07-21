@@ -6,16 +6,13 @@ class WelcomeController < ApplicationController
   end
 
   def about_params
-
-    params[:color] == nil ? @color = 'orange' : @color = params[:color]
-
+    # One way to write this but the ternary operator (below) is more concise.
     # if params[:color] == nil
     #   @color = 'orange'
     # else
     #   @color = params[:color]
     # end
-
+    params[:color] == nil ? @color = 'orange' : @color = params[:color]
     @size = params[:shoe_size]
-
   end
 end
