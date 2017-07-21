@@ -25,11 +25,9 @@ class DestinationsController < ApplicationController
 
     respond_to do |format|
       if @destination.save
-        format.html { redirect_to @destination, notice: 'Destination was successfully created.' }
-        format.json { render :show, status: :created, location: @destination }
+        format.html { redirect_to @destination, notice: 'The magic of creation!' }
       else
         format.html { render :new }
-        format.json { render json: @destination.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -37,11 +35,9 @@ class DestinationsController < ApplicationController
   def update
     respond_to do |format|
       if @destination.update(destination_params)
-        format.html { redirect_to @destination, notice: 'Destination was successfully updated.' }
-        format.json { render :show, status: :ok, location: @destination }
+        format.html { redirect_to @destination, notice: "Destination just got better; I'm sure." }
       else
         format.html { render :edit }
-        format.json { render json: @destination.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -49,17 +45,14 @@ class DestinationsController < ApplicationController
   def destroy
     @destination.destroy
     respond_to do |format|
-      format.html { redirect_to destinations_url, notice: 'Destination was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to destinations_url, notice: 'Poof!  Gone just like that!' }
     end
   end
 
   private
-
     def set_destination
       @destination = Destination.find(params[:id])
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def destination_params
       params.require(:destination).permit(:city, :country, :population, :description, :avatar)
